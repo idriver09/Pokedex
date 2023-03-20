@@ -1,7 +1,4 @@
-.pokemon-list {
-  color: red;
-  text-align: center;
-  font-size: 22px;
-  margin-right: 75%;
-  line-height: 60px;
+h5 {
+  display: inline;
+  color: red
 }
