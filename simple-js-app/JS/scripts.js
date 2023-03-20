@@ -23,9 +23,27 @@ let pokemonList = [
 
 let space = "  ";
 pokemonList.forEach(function(pokemonDetails){
-  document.write('<h5>' + 'Name: ' + '</h5>' + pokemonDetails.Name + space +'<h5>' + 'Type: '+ '</h5>' + pokemonDetails.Type + space +'<h5>' + 'Height: '+ '</h5>' + pokemonDetails.Height + space + '<h5>' +'Abilities: '+ '</h5>'
-   + space + pokemonDetails.Abilities + '<br>');
-})
+  if (pokemonDetails.Height > 1){
+  document.write('<h5>'  + 'Name: ' +  pokemonDetails.Name + space +  'Type: ' +  pokemonDetails.Type + space +  'Height: '+  pokemonDetails.Height + "(Wow that is Big!)" + space +   +'Abilities: ' 
+   + space + pokemonDetails.Abilities +'<br>')
+  
+  } else if (pokemonDetails.Height < 1 && pokemonDetails.Height > 0.5) {
+    document.write('<h5>'  + 'Name: ' +  pokemonDetails.Name + space + 'Type: ' +  pokemonDetails.Type + space +  'Height: '+  pokemonDetails.Height + "(Medium Pokemon)" + space + 'Abilities: ' 
+    + space + pokemonDetails.Abilities +'<br>')
+
+  } else {
+    document.write('<h5>' + 'Name: ' +  pokemonDetails.Name + space + 'Type: ' +  pokemonDetails.Type + space +  'Height: '+  pokemonDetails.Height + "(Small Pokemon)" + space + 'Abilities: '  
+    + space + pokemonDetails.Abilities + '<br>' )
+  }
+ 
+    
+  });
+    
+  
+
+
+
+
 /*The following loop lists the pokemon names and height values. 
 It also checks the height of the pokemon and renders whether it is large, medium, or small. */
 
