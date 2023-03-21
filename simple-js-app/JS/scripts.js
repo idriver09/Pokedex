@@ -22,6 +22,16 @@ let pokemonRepository = (function () {
     },
   ];
 
+  function addListItem(pokemon) {
+    let pokemonListItems = document.querySelector(".pokemon-list");
+    let listItem = document.createElement("li");
+    let button = document.createElement("button");
+    button.innerText = pokemon.Name;
+    button.classList.add("pokemonButton");
+    listItem.appendChild(button);
+    pokemonListItems.appendChild(listItem);
+  }
+
   function getAll() {
     return pokemonList;
   }
@@ -33,64 +43,10 @@ let pokemonRepository = (function () {
   return {
     getAll: getAll,
     add: add,
+    addListItem: addListItem,
   };
 })();
 
-let space = " ";
-pokemonRepository.getAll().forEach(function (pokemonDetails) {
-  if (pokemonDetails.Height > 1) {
-    document.write(
-      "<h5>" +
-        "Name: " +
-        pokemonDetails.Name +
-        space +
-        "Type: " +
-        pokemonDetails.Type +
-        space +
-        "Height: " +
-        pokemonDetails.Height +
-        "(Wow that is Big!)" +
-        space +
-        "Abilities: " +
-        space +
-        pokemonDetails.Abilities +
-        "<br>"
-    );
-  } else if (pokemonDetails.Height < 1 && pokemonDetails.Height > 0.5) {
-    document.write(
-      "<h5>" +
-        "Name: " +
-        pokemonDetails.Name +
-        space +
-        "Type: " +
-        pokemonDetails.Type +
-        space +
-        "Height: " +
-        pokemonDetails.Height +
-        "(Medium Pokemon)" +
-        space +
-        "Abilities: " +
-        space +
-        pokemonDetails.Abilities +
-        "<br>"
-    );
-  } else {
-    document.write(
-      "<h5>" +
-        "Name: " +
-        pokemonDetails.Name +
-        space +
-        "Type: " +
-        pokemonDetails.Type +
-        space +
-        "Height: " +
-        pokemonDetails.Height +
-        "(Small Pokemon)" +
-        space +
-        "Abilities: " +
-        space +
-        pokemonDetails.Abilities +
-        "<br>"
-    );
-  }
+pokemonRepository.getAll().forEach(function (pokemon) {
+  pokemonRepository.addListItem(pokemon);
 });
