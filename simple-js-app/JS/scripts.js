@@ -26,8 +26,12 @@ let pokemonRepository = (function () {
       Type: "flying/fire",
       Height: 1.8,
       Abilities: ["Blaze", " Solar-power"],
-    }
+    },
   ];
+
+  function showDetails(pokemon) {
+    console.log(pokemon);
+  }
 
   function addListItem(pokemon) {
     let pokemonListItems = document.querySelector(".pokemon-list");
@@ -37,6 +41,10 @@ let pokemonRepository = (function () {
     button.classList.add("pokemonButton");
     listItem.appendChild(button);
     pokemonListItems.appendChild(listItem);
+
+    button.addEventListener('click', function () {
+      showDetails(pokemon);
+    });
   }
 
   function getAll() {
@@ -53,8 +61,6 @@ let pokemonRepository = (function () {
     addListItem: addListItem,
   };
 })();
-
-
 
 pokemonRepository.getAll().forEach(function (pokemon) {
   pokemonRepository.addListItem(pokemon);
