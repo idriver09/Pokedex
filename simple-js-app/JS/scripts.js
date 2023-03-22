@@ -20,6 +20,13 @@ let pokemonRepository = (function () {
       Height: 0.3,
       Abilities: ["Keen-eye", " Sniper"],
     },
+
+    {
+      Name: "Charizard",
+      Type: "flying/fire",
+      Height: 1.8,
+      Abilities: ["Blaze", " Solar-power"],
+    }
   ];
 
   function addListItem(pokemon) {
@@ -46,6 +53,8 @@ let pokemonRepository = (function () {
     addListItem: addListItem,
   };
 })();
+
+
 
 pokemonRepository.getAll().forEach(function (pokemon) {
   pokemonRepository.addListItem(pokemon);
