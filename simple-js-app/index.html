@@ -8,14 +8,24 @@
     <title>Simple JS App</title>
   </head>
 
-  <body class="body">
+<body class="body">
     <div class="Pokedex">
       <h1>Pokedex</h1>
       <ul class="pokemon-list"></ul>
     </div>
     
+    <div id="modal-container">
+      <div class="modal">
+        <button class="modal-close">Close</button>
+        <h1 id="modal-title">Modal title</h1>
+        <p id="modal-text">Modal text</p>   
+        <div id="image-container"></div>
+      </div>
+    </div>
+    
     <script src="JS/promise-polyfill.js"></script>
     <script src="JS/fetch-polyfill.js"></script>
     <script class="pokemon" src="js/scripts.js"></script>
+ 
   </body>
 </html>
