@@ -63,10 +63,10 @@ let pokemonRepository = (function () {
 
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
-      //modalContainer.innerHTML = "";
       let modalCloseButton = document.querySelector(".modal-close");
       let imageContainer = document.querySelector("#image-container");
       let pokemonImage = document.createElement("img");
+      pokemonImage.classList.add('pokemon-image')
       let modalTitle = document.querySelector("#modal-title");
       let modalText = document.querySelector("#modal-text");
       modalContainer.classList.add("is-visible");
@@ -74,6 +74,7 @@ let pokemonRepository = (function () {
       modalTitle.innerText = pokemon.name;
       modalText.innerText = "Height:" + pokemon.height;
       pokemonImage.src = pokemon.imageUrl;
+      imageContainer.innerHTML= '';
       imageContainer.appendChild(pokemonImage);
 
       modalContainer.addEventListener("click", (e) => {
