@@ -15,9 +15,17 @@
   </head>
 
   <body>
+    <!-- Image and text -->
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img src="JS/img/Pokeball.png" width="100" height="100" alt="">
+    Pokedex
+  </a>
+</nav>
     <ul class="pokemon-list"></ul>
 
     <div
+      id="modal-container"
       class="modal"
       tabindex="-1"
       role="dialog"
@@ -27,15 +35,19 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
+          
             <h5 class="modal-title"></h5>
-          </div>
+            <div id="button-container"></div>
+           </div>
           <div class="modal-body">
+            <p class=" image-container"></p>
             <p class="height"></p>
+
           </div>
         </div>
       </div>
     </div>
-
+    <a class="footer-link" href="#"> <img src="JS/img/Pokeball.png"  width="50" height= "50" > Back to Top </a>
     <script src="JS/promise-polyfill.js"></script>
     <script src="JS/fetch-polyfill.js"></script>
     <script
