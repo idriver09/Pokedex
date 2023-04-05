@@ -23,7 +23,8 @@
 }
 
 .list-group-item{
-  background-image: blue;
+  background-color: transparent;
+  border: none;
 }
 
 @keyframes pokemonButton-change {
@@ -43,7 +44,8 @@
 }
 
 .pokemonButton {
-  animation: pokemonButton-change;
+  animation-name: pokemonButton-change;
+  animation-iteration-count: 1;
   animation-duration: 2s;
   margin-top: 5px;
   margin-bottom: 5px;
@@ -58,6 +60,9 @@
   border-radius: 50%;
   font-size: large;
   margin: 10px;
+  transform: scale(1) rotate(0);
+  transition: transform 1s;
+
 }
 
 .pokemonButton:hover {
@@ -68,8 +73,8 @@
   border-radius: 50%;
   background-image: linear-gradient(red 50%, white 50%, white 100%);
   font-size: 130%;
-  scale: 1.2;
-  
+  /* scale: 1.2; */
+  transform: scale(1.2) rotate(360deg);
 }
  
  .modal-is-visible {
