@@ -11,13 +11,16 @@ let pokemonRepository = (function () {
   }
 
   function addListItem(pokemon) {
+    
     let pokemonListItems = document.querySelector(".pokemon-list");
-    pokemonListItems.classList.add("list-group-flush");
+    pokemonListItems.classList.add("list-group");
     let listItem = document.createElement("li");
     listItem.classList.add("list-group-item");
 
     let button = document.createElement("button");
-    button.classList.add("btn");
+    button.classList.add("btn-block");
+    button.classList.add("btn-lg");
+    button.classList.add("btn-primary");
     button.innerText = pokemon.name;
     button.classList.add("pokemonButton");
     listItem.appendChild(button);
@@ -71,17 +74,17 @@ let pokemonRepository = (function () {
     });
   }
 
-  function showModal(item) {
-    pokemonRepository.loadDetails(item).then(function () {
+  function showModal(pokemon) {
+    pokemonRepository.loadDetails(pokemon).then(function () {
       let modalTitle = document.querySelector(".modal-title");
 
-      modalTitle.innerText = item.name;
+      modalTitle.innerText = pokemon.name;
 
       let imageContainer = document.querySelector(".image-container");
 
       let pokemonImage = document.createElement("img");
 
-      pokemonImage.src = item.imageUrl;
+      pokemonImage.src = pokemon.imageUrl;
 
       pokemonImage.classList.add("pokemon-image");
 
@@ -91,7 +94,7 @@ let pokemonRepository = (function () {
 
       let pokemonHeight = document.querySelector(".height");
 
-      pokemonHeight.innerText = "Height: " + item.height;
+      pokemonHeight.innerText = "Height: " + pokemon.height;
 
       let modal = document.querySelector(".modal");
 
